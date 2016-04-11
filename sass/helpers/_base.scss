@@ -19,12 +19,13 @@ body, html {
 	position: absolute;
 	top:0;
 	left: 0;
-	z-index: 3;
+	z-index: 8;
 	.shutter {
-	height: 100%;
-	position: absolute;
-	width: 1px;
-	background-color: $gray;
+		height: 100%;
+		position: absolute;
+		width: 1px;
+		background-color: $gray;
+
 		&:nth-child(1) {
 			left: 12.5%;
 		}
@@ -61,7 +62,6 @@ body, html {
 		width: 50%;
 	}
 	&.col-right-3 {
-		float: right;
 		right: 25%;
 		text-align: right;
 	}
@@ -69,6 +69,9 @@ body, html {
 
 .content {
 	width: 100%;
+	z-index:10;
+	position: relative;
+	height: 100%;
 }
 
 .btn {
@@ -79,6 +82,9 @@ body, html {
 	color: white;
 	text-decoration: none;
 	overflow: visible;
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
 	&.right {
 		&:after {
 			content: "";
@@ -141,6 +147,8 @@ h1 {
 	position: relative;
 	line-height: 39px;
 	color: white;
+	transform: translateX(-3px);
+	text-align: left;
 	&:after {
 		content: '';
 		display: block;
@@ -149,16 +157,19 @@ h1 {
 		width: 1px;
 		background-color: $lightBlue;
 		bottom: -57px;
+		left: 3px;
 	}
 }
 
 p {
+	text-align: left;
 	font-family: $varela;
 	font-size: 16px;
 	line-height: 25px;
 	color: $lightBlue;
 	text-indent: 0;
 	margin-bottom: 70px;
+	transform: translateX(-2px);
 }
 
 .content-centered {
@@ -166,4 +177,5 @@ p {
 	width: 100%;
 	transform: translateY(-50%);
 	top: 50%;
+	text-align: right;
 }
