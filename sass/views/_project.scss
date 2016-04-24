@@ -3,6 +3,12 @@
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
+	opacity: 1;
+	transition: all 0.3s ease-in 0.8s;
+	position: relative;
+	.content-centered {
+		opacity: 1;
+	}
 	.layer {
 		background-image: url('../img/layer.png');
 		-webkit-background-size: cover;
@@ -55,6 +61,25 @@
 		}
 	}
 	&.project-explore {
-		background-image: url('../img/explore.png');
+		background-image: url('../img/explore.jpg');
+	}
+	&.project-tesla {
+		background-image: url('../img/tesla.jpg');
+	}
+	&.project-dailymasterpiece {
+		background-image: url('../img/masterpiece.jpg');
+	}
+	&.fade-out {
+		opacity: 0;
+	}
+	&.animate-in {
+		position: absolute;
+		z-index: 6;
+		top: 0;
+		.content-centered {
+			opacity: 0;
+			transform: translateY(-50%) scale(1.1);
+			perspective: 1000; backface-visibility: hidden;
+		}
 	}
 }

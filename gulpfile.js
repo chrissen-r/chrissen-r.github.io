@@ -11,6 +11,9 @@ var plumber = require('gulp-plumber');
 var browserSync = require('browser-sync');
 var mainBowerFiles = require('main-bower-files');
 var sourcemaps = require('gulp-sourcemaps');
+var handlebars = require('gulp-handlebars');
+var wrap = require('gulp-wrap');
+var declare = require('gulp-declare');
 
 gulp.task('browser-sync', function() {
   browserSync({
@@ -57,9 +60,23 @@ gulp.task('views', function() {
   browserSync.reload();
 });
 
-gulp.task('default', ['browser-sync', 'js_libs', 'js_app', 'sass'], function() {
+gulp.task('templates', function () {
+    gulp.src('views/*.hbs')
+      .pipe(handlebars())
+      .pipe(wrap('Handlebars.template(<%= contents %>)'))
+      .pipe(declare({
+          namespace: 'templates',
+          noRedeclare: true, // Avoid duplicate declarations
+      }))
+      .pipe(concat('templates.js'))
+      .pipe(gulp.dest('js/router'))
+      .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task('default', ['browser-sync', 'js_libs', 'templates', 'js_app', 'sass'], function() {
   gulp.watch('bower_component/', ['js_libs']);
 	gulp.watch('sass/**/*.scss', ['sass']);
 	gulp.watch('js/**/*.js', ['js_app']);
   gulp.watch('*.html', ['views']);
+  gulp.watch('views/*.hbs', ['templates']);
 });

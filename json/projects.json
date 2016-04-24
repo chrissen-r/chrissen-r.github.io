@@ -1,0 +1,32 @@
+{
+	"tesla": {
+		"id": "tesla",
+		"name": "Tesla",
+		"description": "Redesign of the dashboard of the Tesla Model S, using the visual identity of the movie Her.",
+		"scope": "School Project",
+		"job": "UX/UI",
+		"link": "http://louisamiot.com",
+		"nextProject": "dailymasterpiece",
+		"previousProject": "explore"
+	},
+	"dailymasterpiece": {
+		"id": "dailymasterpiece",
+		"name": "Daily Masterpiece",
+		"description": "Redesign of the dashboard of the Tesla Model S, using the visual identity of the movie Her.",
+		"scope": "School Project",
+		"job": "UX/UI",
+		"link": "http://louisamiot.com",
+		"nextProject": "explore",
+		"previousProject": "tesla"
+	},
+	"explore": {
+		"id": "explore",
+		"name": "Explore the World",
+		"description": "Redesign of the dashboard of the Tesla Model S, using the visual identity of the movie Her.",
+		"scope": "School Project",
+		"job": "UX/UI",
+		"link": "http://louisamiot.com",
+		"nextProject": "tesla",
+		"previousProject": "dailymasterpiece"
+	}
+}
