@@ -27,17 +27,16 @@ App.prototype.initPage = function() {
 };
 
 App.prototype.initProjectEvents = function() {
-	$(window).on('mousewheel', _.debounce(function(e) {
+	$(window).on('mousewheel', _.throttle(function(e) {
 		console.log('first');
 		if ($('.view').hasClass('project')) {
-			console.log('hey');
 		    if(e.originalEvent.wheelDelta / 120 > 0) {
 		    	app.changeProject('previous');
 		    } else {
 		        app.changeProject('next');
 		    }
 		}
-	}, 1800, true));
+	}, 1800, {trailing: false}));
 };
 
 App.prototype.setRouting = function() {
@@ -79,7 +78,12 @@ App.prototype.loadView = function(view,params) {
 	else {
 		$('#app').html(this.getTemplate(view,params));
 		if ($('.view').hasClass('project')) {
-			// set bg
+			var newView = $('.view');
+			newView.addClass('animate-in');
+			oldView.addClass('fade-out');
+			setTimeout(function() {
+				newView.removeClass('animate-in').css('zIndex', 'initial');
+			},1200);
 		}
 	}
 	this.initPage();
