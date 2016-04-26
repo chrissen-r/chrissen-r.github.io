@@ -6,9 +6,7 @@
 	opacity: 1;
 	transition: all 0.3s ease-in 0.8s;
 	position: relative;
-	.content-centered {
-		opacity: 1;
-	}
+	z-index: initial;
 	.layer {
 		background-image: url('../img/layer.png');
 		-webkit-background-size: cover;
@@ -29,7 +27,9 @@
 		color: white;
 	}
 	.top {
-		color: white;
+		span { 
+			color: white;
+		}
 		&:before {
 			background-color: white;
 		}
@@ -44,19 +44,35 @@
 			font-family: $mont;
 			text-transform: uppercase;
 			font-size: 14px;
+			line-height: 14px;
 			color: $lightBlue;
 			text-decoration: none;
-			overflow: visible;
-			margin-bottom: 0;
+			overflow: hidden;
+			transform: translateX(-3px);
+			margin-bottom: 10px;
+			padding-right: 7px;
+			position: relative;
+			span {
+				display: block;
+				white-space: nowrap;
+				width: 100%;
+				overflow: hidden;
+				transform: translateX(-137px);
+				transition: all 0.4s ease-in;
+			}
 			&:before {
 				content: "";
 				display: inline-block;
 				height: 10px;
-				margin-top: 4px;
 				width: 1px;
 				background-color: $lightBlue;
 				margin-right: 10px;
-				transition: all ease-in 0.4s;
+				transform: translateX(1px);
+				transition: all 0.4s ease-in;
+				position: absolute;
+				margin-top: 2px;
+				left: 0;
+				opacity: 0;
 			}
 		}
 	}
@@ -71,15 +87,5 @@
 	}
 	&.fade-out {
 		opacity: 0;
-	}
-	&.animate-in {
-		position: absolute;
-		z-index: 6;
-		top: 0;
-		.content-centered {
-			opacity: 0;
-			transform: translateY(-50%) scale(1.1);
-			perspective: 1000; backface-visibility: hidden;
-		}
 	}
 }

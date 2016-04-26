@@ -64,27 +64,12 @@ App.prototype.setRouting = function() {
 App.prototype.loadView = function(view,params) {
 	var oldView = $('.view');
 	if (oldView.length > 0) {
-		oldView.find('.content-centered').addClass('scale-out');
-		oldView.css('zIndex', '7');
-		oldView.after(this.getTemplate(view,params));
-		var newView = $('.view:nth-child(2)');
-		newView.addClass('animate-in');
-		oldView.addClass('fade-out');
-		setTimeout(function() {
-			newView.removeClass('animate-in').css('zIndex', 'initial');
-			oldView.remove();
-		},1200);
+		this.animateOut(oldView,view,params);
+		this.animateIn($('.view:nth-child(2)'),true);
 	}
 	else {
 		$('#app').html(this.getTemplate(view,params));
-		if ($('.view').hasClass('project')) {
-			var newView = $('.view');
-			newView.addClass('animate-in');
-			oldView.addClass('fade-out');
-			setTimeout(function() {
-				newView.removeClass('animate-in').css('zIndex', 'initial');
-			},1200);
-		}
+		this.animateIn($('.view'),false);
 	}
 	this.initPage();
 };
@@ -107,11 +92,48 @@ App.prototype.getParams = function(id) {
 };
 
 App.prototype.changeProject = function(direction) {
-	console.log(direction);
+
 	if (direction == 'previous') {
 		this.router.navigate('project/'+this.currentProject.previousProject);
 	}
 	else {
 		this.router.navigate('project/'+this.currentProject.nextProject);
 	}
+};
+
+App.prototype.animateIn = function(elem,wait) {
+
+	var newView = elem;
+	newView.addClass('animate-in');
+	
+	if (wait) {
+		setTimeout(function() {
+			setTimeout(function() {
+				newView.removeClass('animate-in');
+			},50);
+			setTimeout(function() {
+				newView.addClass('view-loaded');
+			},900);
+		},1200);
+	}
+	else {
+		console.log('animate directly');
+		setTimeout(function() {
+			newView.removeClass('animate-in');
+		},50);
+		setTimeout(function() {
+			newView.addClass('view-loaded');
+		},900);
+	}
+};
+
+App.prototype.animateOut = function(elem,view,params) {
+	var oldView = elem;
+	oldView.find('.content-centered').addClass('scale-out');
+	oldView.css('zIndex', '7');
+	oldView.after(this.getTemplate(view,params));
+	oldView.addClass('fade-out');
+	setTimeout(function() {
+		oldView.remove();
+	},1200);
 };
