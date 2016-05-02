@@ -6,7 +6,7 @@
 		"scope": "School Project",
 		"job": "UX/UI",
 		"link": "https://www.behance.net/gallery/35621537/Tesla-x-Her-Dashboard-Redesign-Concept",
-		"nextProject": "explore",
+		"nextProject": "louis",
 		"previousProject": "dailymasterpiece"
 	},
 	"dailymasterpiece": {
@@ -27,6 +27,16 @@
 		"job": "UX/UI",
 		"link": "http://explore.louisamiot.com/",
 		"nextProject": "dailymasterpiece",
+		"previousProject": "louis"
+	},
+	"louis": {
+		"id": "louis",
+		"name": "Louis Amiot",
+		"description": "2016 Portfolio of Louis Amiot.",
+		"scope": "Personal Project",
+		"job": "UX/UI",
+		"link": "http://louisamiot.com/",
+		"nextProject": "explore",
 		"previousProject": "tesla"
 	}
 }

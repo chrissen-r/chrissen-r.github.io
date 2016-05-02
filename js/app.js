@@ -49,7 +49,7 @@ App.prototype.setRouting = function() {
 	},true);
 
 	this.router.on('/project/:id', function(params) {
-		that.getParams(params.id).then(function(params){
+			that.getParams(params.id).then(function(params){
 			that.currentProject = params;
 			that.loadView('project',params);
 		});
@@ -63,6 +63,7 @@ App.prototype.setRouting = function() {
 
 App.prototype.loadView = function(view,params) {
 	var oldView = $('.view');
+
 	if (oldView.length > 0) {
 		this.animateOut(oldView,view,params);
 		this.animateIn($('.view:nth-child(2)'),true);
@@ -117,7 +118,6 @@ App.prototype.animateIn = function(elem,wait) {
 		},1200);
 	}
 	else {
-		console.log('animate directly');
 		setTimeout(function() {
 			newView.removeClass('animate-in');
 		},50);
@@ -125,10 +125,15 @@ App.prototype.animateIn = function(elem,wait) {
 			newView.addClass('view-loaded');
 		},900);
 	}
+
 };
 
 App.prototype.animateOut = function(elem,view,params) {
+
 	var oldView = elem;
+
+	console.log('here');
+
 	oldView.find('.content-centered').addClass('scale-out');
 	oldView.css('zIndex', '7');
 	oldView.after(this.getTemplate(view,params));
@@ -136,4 +141,5 @@ App.prototype.animateOut = function(elem,view,params) {
 	setTimeout(function() {
 		oldView.remove();
 	},1200);
+
 };
