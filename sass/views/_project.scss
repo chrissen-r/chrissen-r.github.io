@@ -4,7 +4,7 @@
 	background-position: center center;
 	background-repeat: no-repeat;
 	opacity: 1;
-	transition: all 0.3s ease-in 0.8s;
+	transition: all 0.3s ease-in 0.8s, opacity 0s ease-in;
 	position: relative;
 	z-index: initial;
 	.layer {
@@ -75,6 +75,15 @@
 				opacity: 0;
 			}
 		}
+	}
+	&.animate-out {
+		transition: opacity 0s ease-in 0.8s;
+	}
+	&.animate-in {
+		opacity: 0;
+	}
+	&.from-project {
+		opacity: 1;
 	}
 	&.project-explore {
 		background-image: url('../img/explore.jpg');

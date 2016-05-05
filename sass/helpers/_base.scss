@@ -179,6 +179,7 @@ body, html {
 			position: absolute;
 			margin-top: 2px;
 			left: 0;
+			top: 0;
 		}
 		&:hover {
 			color: white;
@@ -193,9 +194,11 @@ body, html {
 		}
 	}
 	&.top {
+		display: none;
 		top: 32px;
 	}
 	&.bottom {
+		display: none;
 		position: absolute;
 		&:nth-last-child(1) {
 			bottom: 32px;
