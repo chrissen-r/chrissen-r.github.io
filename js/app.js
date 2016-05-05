@@ -139,7 +139,7 @@ App.prototype.changeProject = function(direction) {
 App.prototype.animateIn = function(elem,wait,oldView) {
 
 	var newView = elem;
-	if (oldView.hasClass('project')) {
+	if (typeof oldView !== "undefined" && oldView.hasClass('project')) {
 		newView.addClass('from-project');
 	}
 	newView.addClass('animate-in');
