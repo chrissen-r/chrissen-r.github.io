@@ -50,6 +50,17 @@ App.prototype.load = function() {
 
 }
 
+App.prototype.checkIfMobile = function() {
+
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		this.loadView('homemobile',{});
+	}
+	else {
+		this.loadView('home',{});
+	}
+
+};
+
 App.prototype.initPage = function() {
 	var view = $('.view');
 	if (view.hasClass('project')) {
@@ -82,6 +93,10 @@ App.prototype.setRouting = function() {
 		that.loadView('contact',{});
 	},true);
 
+	this.router.on('/mobile', function() {
+		that.loadView('homemobile',{});
+	},true);
+
 	this.router.on('/project/:id', function(params) {
 			that.getParams(params.id).then(function(params){
 			that.currentProject = params;
@@ -90,7 +105,7 @@ App.prototype.setRouting = function() {
 	},true);
 
 	this.router.on('*', function() {
-		that.loadView('home',{});
+		that.checkIfMobile();
 	});
 
 };
