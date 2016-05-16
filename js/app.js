@@ -161,7 +161,12 @@ App.prototype.animateIn = function(elem,wait,oldView) {
 	
 	if (wait) {
 		setTimeout(function() {
-			newView.find('.top, .bottom').fadeIn('slow');
+			if (!newView.hasClass('project')) {
+				newView.find('.top, .bottom').fadeIn('slow');
+			}
+			else {
+				newView.find('.top, .bottom').show();
+			}
 			setTimeout(function() {
 				newView.removeClass('animate-in');
 			},50);
@@ -187,8 +192,10 @@ App.prototype.animateIn = function(elem,wait,oldView) {
 App.prototype.animateOut = function(elem,view,params) {
 
 	var oldView = elem;
-
-	oldView.find('.top, .bottom').fadeOut();
+	if (!oldView.hasClass('project')) {
+		console.log('going here');
+		oldView.find('.top, .bottom').fadeOut();	
+	}
 	oldView.find('.content-centered').addClass('scale-out');
 	oldView.css('zIndex', '7');
 	oldView.after(this.getTemplate(view,params));

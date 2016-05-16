@@ -1,12 +1,24 @@
 .project {
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
 	opacity: 1;
 	transition: all 0.3s ease-in 0.8s, opacity 0s ease-in;
 	position: relative;
 	z-index: initial;
+	&:before {
+	    content: ' ';
+	    display: block;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    height: 100%;
+	    z-index: 1;
+	    opacity: 1;
+	    transition: all 0.3s ease-in 0.8s;
+	    background-repeat: no-repeat;
+	    background-position: center center;
+	    -webkit-background-size: cover;
+	    background-size: cover;
+	}
 	.layer {
 		background-image: url('../img/layer.png');
 		-webkit-background-size: cover;
@@ -84,21 +96,24 @@
 	}
 	&.from-project {
 		opacity: 1;
+		.top, .bottom {
+			opacity: 1;
+		}
 	}
-	&.project-explore {
+	&.project-explore:before {
 		background-image: url('../img/explore.jpg');
 	}
-	&.project-tesla {
+	&.project-tesla:before {
 		background-image: url('../img/tesla.jpg');
 	}
-	&.project-dailymasterpiece {
+	&.project-dailymasterpiece:before {
 		background-image: url('../img/masterpiece.jpg');
 	}
 
-	&.project-louis {
+	&.project-louis:before {
 		background-image: url('../img/louis.jpg');
 	}
-	&.fade-out {
+	&.fade-out:before {
 		opacity: 0;
 	}
 }
