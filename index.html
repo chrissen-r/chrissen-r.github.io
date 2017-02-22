@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+    <base href="/">
+    <meta charset="UTF-8" />
     
-    <title>Chrissen Rajathurai - Portfolio</title>
-    <base href="/" />
+    <title>Chrissen Rajathurai - 2017 Portfolio</title>    
     
     <!-- SEO meta -->
     <meta name="robots" content="index, follow" />
-    <meta name="description" content="2016 Portfolio of Chrissen Rajathurai" />
+    <meta name="description" content="Chrissen Rajathurai - 2017 Portfolio" />
     <!-- End SEO meta -->
 
     <!-- IE meta -->
@@ -19,7 +19,7 @@
     <!-- Apple meta -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="Chrissen R" />
+    <meta name="apple-mobile-web-app-title" content="Chrissen Rajathurai - 2017 Portfolio" />
     <!-- End Apple meta -->
 
     <!-- Mobile meta -->
@@ -46,59 +46,49 @@
     <!-- End Twitter meta -->
     
     <!-- build:css -->
-    <link rel="stylesheet" href="build/main.css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500|Roboto:300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/app.css">
     <!-- endbuild -->
-
-    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="manifest" href="img/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 
 </head>
 <body>
-    <div id="app">
-    </div>
-    <div class="shutters">
-        <div class="shutter"></div>
-        <div class="shutter"></div>
-        <div class="shutter"></div>
-        <div class="shutter"></div>
-        <div class="shutter"></div>
-        <div class="shutter"></div>
-        <div class="shutter"></div>
-    </div>
-    <div class="loader">
-        <div class="loadbox">
-            <div class="loaded"></div>
+
+    <header class="header">
+        <h1>Chrissen Rajathurai</h1>
+        <p>portfolio</p>
+        <a class="cta" target="_self">more about me</a>
+        <a href="/" ></a>
+    </header>
+
+    <section class="about">
+        <div class="about__introduction">
+            <p>Hello, I’m a 24-year-old <strong>Junior Digital Designer</strong> living in <strong>Paris</strong> and studying at <a href="http://hetic.net/" class="cta" target="_blank">Hetic</a>.</p>
+            <p>I’m looking for an <strong>internship</strong> in San Francisco from <strong>July to December 17’</strong>.</p>
+            <p>I like to design <strong>simple</strong> and <strong>friendly</strong> interfaces and I am always eager to learn new things.</p>
+            <p>Doing my internship abroad would allow me to discover how international agencies work and improve my skills in <strong>UX</strong>, <strong>UI</strong> and <strong>animations</strong>.</p>
+            <p>I also do <strong>freelance</strong> work, so feel free to <a class="cta" target="_blank" href="mailto:chrissen.r@gmail.com">contact me</a> !</p>
         </div>
+        <div class="about__informations">
+            <h2 class="with-line">Links</h2>
+            <ul class="about__socials">
+                <li><a class="cta" href="https://dribbble.com/Chrissen" target="_blank">Dribbble</a></li>
+                <li><a class="cta" href="https://www.behance.net/chrissenr" target="_blank">Behance</a></li>
+                <li><a class="cta" href="https://twitter.com/Chrissen_R" target="_blank">Twitter</a></li>
+                <li><a class="cta" href="https://www.instagram.com/_chrissen/" target="_blank">Instagram</a></li>
+                <li><a class="cta" href="mailto:chrissen.r@gmail.com" target="_blank">E-mail</a></li>
+            </ul>
+            <div class="about__credits">
+                <p class="with-line">Developed by <a href="http://louisamiot.com" target="_blank" class="cta">Louis Amiot</a></p>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-content">      
     </div>
-    <script src="build/vendors.js"></script>
-    <script src="build/app.js"></script>
-    <script>var app; $(document).ready(function () {app = new App();});</script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-77363650-1', 'auto');
-      ga('send', 'pageview');
+    <script src="js/vendors.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/main.js"></script>
 
-    </script>
 </body>
 </html> 

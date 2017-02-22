@@ -1,0 +1,94 @@
+{
+	"views": {
+		"home": false,
+		"project": {
+			"tesla": {
+				"index": 1,
+				"title": "TeslaXHer",
+				"type": "UX/UI",
+				"link": "/project/tesla",
+				"teaser": "img/project-1-teaser.png",
+				"description": "Team project for school where the main goal was to redesign Tesla’s dashboard, in the style of a movie of our choice. We chose the movie Her.<br>The main challenge for us was that we had to design an entire interface from a movie that contained only very few graphical elements.",
+				"images": [
+					{
+						"source": "img/project1/dashboard.png",
+						"legend": "The dashboard"
+					},
+					{
+						"source": "img/project1/GPS.png",
+						"legend": "GPS App"
+					},
+					{
+						"source": "img/project1/music.png",
+						"legend": "Music App"
+					}
+				],
+				"next-project": {
+					"title": "LBPC",
+					"link": "/project/lbpc"
+				}
+			},
+			"lbpc": {
+				"index": 2,
+				"title": "LBPC",
+				"type": "UI",
+				"link": "/project/lbpc",
+				"teaser": "img/project-2-teaser.png",
+				"description": "Les Plus Beaux Châteaux is a school project for a real client where the main goal was to give visitors all the data they needed before visiting a castle in France. The website had to be a Wordpress so the owner could add any data he wanted. Visitors can also see events and places related to a castle.",
+				"images": [
+					{
+						"source": "img/project2/home.png",
+						"legend": "Home"
+					},
+					{
+						"source": "img/project2/page-chateau.png",
+						"legend": "Castle page"
+					}
+				],
+				"next-project": {
+					"title": "Delivr'hetic",
+					"link": "/project/delivrhetic"
+				}
+			},
+			"delivrhetic": {
+				"index": 3,
+				"isMobile": "is-mobile",
+				"title": "Delivr'hetic",
+				"type": "UI",
+				"link": "/project/delivrhetic",
+				"teaser": "img/project-3-teaser.png",
+				"description": "Delivr’Hetic is a school project made for a special week called “Intensive Week”. We had 5 days to design and develop a mobile app. We choose to create an app that let students of our school order meals to other students who are going to buy lunch outside.",
+				"images": [
+					{
+						"source": "img/project3/splash.png",
+						"legend": "Splash screen"
+					},
+					{
+						"source": "img/project3/phone-number.png",
+						"legend": "Phone number screen"
+					},
+					{
+						"source": "img/project3/delivery-list.png",
+						"legend": "Delivery list"
+					},
+					{
+						"source": "img/project3/order.png",
+						"legend": "Order screen"
+					},
+					{
+						"source": "img/project3/confirm-order.png",
+						"legend": "Confirm order screen"
+					},
+					{
+						"source": "img/project3/follow-order.png",
+						"legend": "Order follow-up screen"
+					}
+				],
+				"next-project": {
+					"title": "LBPC",
+					"link": "/project/lbpc"
+				}
+			}
+		}
+	}
+}
